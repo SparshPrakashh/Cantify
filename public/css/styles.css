@@ -1,0 +1,625 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Teko:wght@300;400;500;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f4e9d5;
+  font-family: "Montserrat";
+  color: #282a35;
+}
+
+
+/* NAVBAR START */
+
+.nav {
+  background-color: #ffd11a;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3vh;
+  position: sticky;
+  top: 0;
+  box-shadow: 0 0 8px;
+  z-index: 100;
+}
+
+
+
+.left a {
+  font-size: 2vw;
+  text-decoration: none;
+  color: #282a35;
+}
+
+
+ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  font-family: "Montserrat";
+  font-weight: 200;
+}
+
+.right{
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+}
+
+.right li {
+  margin-right: 3vw;
+  font-size: 1vw;
+  align-self: center;
+}
+
+.right a {
+  text-decoration: none;
+  color: #181818;
+  transition: color .3s;
+}
+
+.right a:hover {
+  color: white;
+}
+
+.right button, .btn {
+  color: #262525;
+  font-family: "Montserrat";
+  padding: 0.4vw 1vw 0.4vw 1vw;
+  border: 1px solid #262525;
+  border-radius: 4px;
+  transition: color .3s, background-color .3s, transform .3s;
+  cursor: pointer;
+}
+
+.right button:hover, .btn:hover {
+  color: white;
+  background-color: #262525;
+}
+
+.left {
+  font-weight: 800;
+}
+
+
+/* NAVBAR END */
+
+
+
+
+
+
+.intro-container {
+  border-radius: 15px;
+  background-color: cadetblue;
+  display: flex;
+  margin: 2vw 2vw;
+  padding: 2vw 4vw ;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 0 8px;
+}
+
+.introText {
+  width: 30%;
+  font-size: 4vw;
+  font-weight: 800;
+}
+
+.tdspl{
+  display: flex;
+  width: 50%;
+
+}
+
+.tdsplimg{
+  width: 13vw;
+  height: 13vw;
+  border-radius: 15px;
+  box-shadow: 0 0 5px green;
+  transition: transform 0.3s;
+}
+
+.tdsplimg:hover{
+  transform: scale(1.05);
+}
+
+.tdspldesc{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin-left: 1.2vw;
+  font-size: 1.5vw;
+}
+
+.tdspldesc p{
+  font-family: "Poppins";
+}
+
+.addToCart {
+  background-color: transparent;
+  font-size: 1.1vw;
+  border-radius: 20px;
+  border: 2px solid #282a35;
+  color: #282a35;
+  font-family: "Poppins";
+  width: 6vw;
+}
+
+.addToCart:hover {
+  color: aliceblue;
+  border: 2px solid aliceblue;
+}
+
+
+.menu-container, .mobile {
+  display: flex;
+  justify-content: space-evenly;
+}
+.mobile{
+  width: 50vw;
+}
+
+.menu-item{
+  display: flex;
+  flex-direction: column;
+  margin: 5vh 1vw;
+  align-items: center;
+  font-family: "Teko";
+  font-size: 1.2vw;
+  justify-content: center;
+}
+
+.menu-item-form{
+  text-align: center;
+}
+
+.item-img {
+  height:13vw;
+  width: 13vw;
+  border-radius: 15px;
+  margin-bottom: 2vh;
+  /* justify-self: center; */
+  box-shadow: 0 0 3px;
+  transition: transform 0.3s;
+}
+
+.item-img:hover{
+  transform: scale(1.1);
+}
+
+.heading {
+  display: flex;
+  justify-content: center;
+  font-size: 1.2vw;
+  margin-top: 5vh;
+}
+
+
+
+
+
+
+.combo-category {
+  display: flex;
+  margin-top: 5vh;
+  justify-content: space-around;
+}
+
+.combo-card {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  width: 30%;
+  box-shadow: 0 0 10px;
+}
+
+
+.cmbimg {
+  height: 13vw;
+  width: 13vw;
+  border-radius: 10px 0 0 10px;
+}
+
+.combodesc {
+  padding: 0 2.5vw ;
+  height: 100%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  font-family: "Poppins";
+  border-radius: 0 10px 10px 0;
+}
+
+.combodesc h2, h3{
+  font-size: 1.5vw;
+}
+
+.combodesc p{
+  font-size: 1.3vw;
+}
+
+.rateAdd {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+}
+
+
+
+.combodesc button:hover {
+  background-color: #181818;
+  border: 1px solid black;
+  color: white;
+}
+
+.endmsg {
+  background-color: burlywood;
+  /* display: flex; */
+  /* width: 100%; */
+  /* height: 30vh; */
+  margin-top: 20vh;
+  /* justify-content: center; */
+  /* align-items: center; */
+  text-align: center;
+  padding: 15vh 2vw ;
+}
+
+.endmsg h1 {
+  color: #181818;
+  font-family: "Montserrat";
+  font-weight: 800;
+}
+
+.footer {
+  background-color: #181818;
+  color: aliceblue;
+  padding: 7vh 0;
+  font-family: "Poppins";
+  text-align: center;
+}
+
+
+
+
+/* CART STYLING */
+.cart-heading{
+  padding: 5vh 3vw;
+}
+
+.cartBox{
+  display: flex;
+}
+
+.emptymsg{
+  margin: 15vh 14vw;
+}
+
+.cart-item-list{
+  width: 60vw;
+  height: 65vh;
+  overflow: auto;
+  background-color: white;
+  margin-bottom: 11vh;
+  margin-left: 2vw;
+  box-shadow: inset 0 0 10px yellow, 0 0 5px;
+  border-radius: 15px;
+}
+.cart-item{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 3vh 1vw 2vh 1vw;
+  padding: 2vh 0;
+  background-color: #EEF1FF;
+  border-radius: 15px;
+  box-shadow: 0 0 10px;
+}
+
+.cart-item h4{
+  font-size: 1vw;
+  width: 8vw;
+}
+
+.cart-item h5{
+  width: 4vw;
+}
+
+.cart-item img{
+  height: 6vw;
+  width: 6vw;
+  border-radius: 15px;
+  box-shadow: 0 0 10px yellow;
+}
+
+.quantity-box{
+  display: flex;
+  /* margin: 1vw 3vw; */
+  align-items: center;
+
+}
+
+
+.quantity-box button{
+  margin: 0 2vw;
+  font-size: 1.3vw;
+  border-radius: 25px;
+  padding: 0.1vw 0.5vw;
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+.quantity-box button:hover{
+  background-color: grey;
+  transform: scale(1.1);
+}
+
+.emptyodr{
+  justify-self: center;
+  align-self: center;
+}
+
+.payBox{
+  background-color: #262525;
+  color: white;
+  height: 60vh;
+  width: 28vw;
+  margin-left: 5vw;
+  padding-top: 5vh;
+  border: 2px solid yellow;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 0 10px black;
+}
+
+.payBox h3{
+  text-decoration: underline;
+}
+
+.payBox .btn:hover{
+  background-color: yellow;
+  color: black;
+  transform: scale(1.1);
+}
+
+.summary{
+  margin-top: 8vh;
+  font-size: 1.2vw;
+  height: 30vh;
+  width: 25vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+
+.orderTotal{
+  display: flex;
+  width: 25vw;
+  justify-content: space-between;
+  /* padding: 0 3vw; */
+  margin-top: 2vh;
+  margin-bottom: 3vh;
+}
+.placeOrder{
+  width: 25vw;
+  display: flex;
+  align-items: center;
+  justify-content:space-around;
+}
+
+.placeOrder a{
+  text-decoration: none;
+  color: white;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.placeOrder a:hover{
+  cursor: pointer;
+  transform: scale(1.2);
+  color: yellow;
+}
+
+/*ScrollBar Design*/
+
+::-webkit-scrollbar{
+  display: none;
+}
+
+/* ::-webkit-scrollbar-thumb{
+  background: green;
+  border-radius: 10px;
+} */
+
+/*/////////////////////////TOP PICKS/////////////////////////////*/
+
+
+.cardSection, .dishCard{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cardRow{
+  display: flex;
+  justify-content: space-around;
+}
+
+.dishCard{
+  background-color: white;
+  padding: 2vh;
+  box-shadow: 0 0 2px;
+  width: 15%;
+  margin: 4vh 0;
+}
+
+.dishCard img{
+  border-radius: 20px;
+  margin-bottom: 3vh;
+  height: 30vh;
+}
+
+.dishCard .addToCart:hover{
+  background-color: #262525;
+}
+
+
+
+
+
+@media all and (max-width: 769px) {
+  .nav {
+    font-size: 3.3vw;
+  }
+
+  .left a{
+    font-size: 4vw;
+  }
+
+  .right li{
+    font-size: 2.5vw;
+  }
+
+  .right button {
+    font-size: 2.5vw;
+  }
+
+  .intro-container{
+    height: 30%;
+    flex-direction: column;
+  }
+
+  .intro-container h2, h1{
+    font-size: 3vh;
+  }
+
+  .intro-container p{
+    font-size: 1.8vh;
+  }
+
+  .tdspl{
+    width: 100%;
+    justify-content: space-around;
+    margin-bottom: 5vh;
+  }
+
+  .tdsplimg{
+    width: 30vw;
+    height: 30vw;
+  }
+
+  .introText{
+    width: 100%;
+    text-align: center;
+  }
+  .introText p{
+    font-size: 200%;
+    margin-bottom: 3vh;
+  }
+
+  .addToCart{
+    font-size: 3vw;
+    width: 15vw;
+  }
+
+  .heading h3{
+    font-size: 3vh;
+  }
+
+  .menu-container{
+    flex-direction: column;
+  }
+  .mobile{
+    width: 100vw;
+  }
+
+  .item-img{
+    height: 15vh;
+    width: 15vh;
+  }
+
+  .menu-item h4{
+    font-size: 2vh;
+  }
+  .combo-category{
+    height: 70vh;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .combo-card {
+    height: 30%;
+    width: 70%;
+    justify-content: space-between;
+  }
+  .cmbimg{
+    height: 100%;
+    width: 40%;
+  }
+  .combodesc{
+    width: 60%;
+  }
+  .combo-card .addToCart{
+    width: 20vw;
+  }
+  .combodesc h2, h3{
+    font-size: 2.5vh;
+    align-self: center;
+  }
+  .combodesc p{
+    font-size: 2vw;
+    font-weight: bold;
+  }
+
+  .quantity-box form button{
+    padding: 0 1.2vh;
+    font-size: 3vh;
+    transition: transform 0.3s, background-color 0.3s;
+  }
+  
+  .quantity-box button:hover{
+    background-color: grey;
+    transform: scale(1.1);
+  }
+
+  .cartBox{
+    flex-direction: column;
+  }
+  .cart-item-list{
+    width: 96vw;
+  }
+  .payBox{
+    width: 89vw;
+    margin-bottom: 5vh;
+  }
+  .placeOrder{
+    width: 65vw;
+  }
+  .popdown{
+    flex-direction: column;
+  }
+
+  .cardRow{
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .dishCard{
+    width: 50%;
+  }
+
+  .dishCard, .dishcard .rateAdd {
+    font-size: 3vh;
+  }
+
+}

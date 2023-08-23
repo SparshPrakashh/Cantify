@@ -1,0 +1,54 @@
+<%- include('partials/header') %>
+
+
+
+<div style="display: flex; margin-top: 10vh;">
+  <a href="/" style="font-size: 30px;width: 42%; margin-left: 1vw; padding-left:3%;"><i class="fa-sharp fa-solid fa-arrow-left"></i></a>
+  <h3>Top Picks: </h3>
+</div>
+
+<div class="cardSection">
+  <div class="cardRow">
+    <% let i=0; %>
+    <% for(let j=0; j<dishes.length; j++){ %>
+        <% if (j>0 && j%3==0){%>
+        </div>
+        <div class="cardRow">
+        <%}%>
+        <% if(dishes[j].category=="dish" || dishes[j].category=="special"){%>
+          <div class="dishCard">
+            <img src="images/<%=dishes[j].name%>.jpg" alt="image">
+            <p ><%=dishes[j].dishName%></p>
+            <div class="rateAdd">
+              <h4>₹ <%=dishes[j].price %></h4>
+            
+                <% if(dishes[j].status=="added"){ %>
+                  <div class="quantity-box">
+                    <form action="/edit-quantity/top-picks" method="post">
+                      <button type="submit" name="delete" value=<%=dishes[j].name%>>-</button>
+                    </form>
+        
+                    <p><%=dishes[j].quantity %></p>
+                    <form action="/edit-quantity/top-picks" method="post">
+                      <button type="submit" name="add" value=<%=dishes[j].name%>>+</button>
+                    </form>
+        
+                  </div>
+                <%}else{%>
+                  
+                <form action="/addToCart/top-picks" method="post">
+                <button type="submit" class="addToCart" name="dishName" value="<%=dishes[j].name %>"><%= dishes[j].status%></button>
+                </form>
+
+                <%}%>
+
+            </div>
+          </div>
+        <%}%>  
+      
+      
+    <%}%>
+  </div>
+</div>
+
+<%- include('partials/footer') %>

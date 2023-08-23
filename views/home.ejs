@@ -1,0 +1,154 @@
+
+<%- include('partials/header') %>
+
+
+  
+
+<div class="intro-container" >
+       <div class="introText" ><p>Just Order and <span style="color: white">RELAX!</span></p></div>
+       <div class="tdspl" >
+           <img src="/images/dosa.jpg" alt="" class="tdsplimg">
+           <div class="tdspldesc">
+               <h2>Today's Special:</h2>
+               <% dishes.forEach(function(element){%>
+                  <% if(element.category=="special"){ %>
+                    <h1><%=element.dishName%></h1>
+                    <p><%= element.description%></p>
+                  
+
+                  <% if(element.status=="added"){ %>
+                    <div class="quantity-box">
+                      <form action="/edit-quantity/tdspl" method="post">
+                        <button type="submit" name="delete" value=<%=element.name%>>-</button>
+                      </form>
+          
+                      <p><%=element.quantity %></p>
+                      <form action="/edit-quantity/tdspl" method="post">
+                        <button type="submit" name="add" value=<%=element.name%>>+</button>
+                      </form>
+          
+                    </div>
+                  <%}else{%>
+                    
+                  <form action="/addToCart/tdspl" method="post">
+                   <button type="submit" class="addToCart" name="dishName" value="<%=element.name %>"><%= element.status%></button>
+                  </form>
+    
+                  <%}%>
+                  <%}%>
+               <%});%>
+               
+               
+               <!-- <form action="/addToCart" method="post">
+                  <button type="submit" class="addToCart" name="dishName" value="dosa">+ Add</button>
+               </form> -->
+
+           </div>
+       </div>
+   </div>
+
+   <div class="heading" >
+       <h3>Menu</h3>
+   </div>
+
+    <div class="menu-container">
+      <div class="mobile">
+
+        <div class="menu-item">
+          <form action="/top-picks" method="get" class="menu-item-form">
+            <!-- <input type="image" src="images/chole.jpg" alt="" class="item-img" id="topPicksImg"> -->
+            <button type="submit" class="item-img" style="background: url('/images/chole.jpg');background-size: cover; background-repeat: no-repeat;"></button>
+            <h4>Top picks</h4>
+          </form>
+            
+        </div>
+
+        <div class="menu-item">
+            <img src="images/samosa.jpg" class="item-img" alt="">
+                <h4>Easy Snacks</h4>
+        </div>
+
+        <div class="menu-item">
+            <img src="images/rajmachawal.jpg" alt="" class="item-img">
+                <h4>Meals</h4>
+        </div>
+
+      </div>
+
+      <div class="mobile" >
+        <div class="menu-item">
+            <img src="images/Thali.jpg" alt="" class="item-img">
+                <h4>Thalis</h4>
+        </div>
+
+        <div class="menu-item">
+            <img src="images/patties.jpg" alt="" class="item-img">
+                <h4>Bakery</h4>
+        </div>
+
+        <div class="menu-item"  >
+            <img src="images/coldcoffee.jpg" alt="" class="item-img">
+                <h4>Beverages</h4>
+        </div>
+      </div>
+
+   </div>
+
+   <div class="heading" id="comboSection">
+       <h3 style="margin-bottom: 5vh;">Cool Combos</h3>
+   </div>
+   <div class="combo-category">
+           <% dishes.forEach(function(element){ %>
+            <% if(element.category == "combo"){ %>
+            <div class="combo-card ">
+              <img src="images/<%= element.name %>.jpg" alt="" class="cmbimg">
+              <div class="combodesc">
+                  <h2 ><%= element.dishName %></h2>
+                  <p><%= element.description %></p>
+                  <div class="rateAdd">
+                      <h3>₹<%= element.price %></h3>
+
+                      <% if(element.status=="added"){ %>
+                        <div class="quantity-box">
+                          <form action="/edit-quantity/home" method="post">
+                            <button submit" name="delete" value=<%=element.name%>>-</button>
+                          </form>
+              
+                          <p><%=element.quantity %></p>
+                          <form action="/edit-quantity/home" method="post">
+                            <button type="submit" name="add" value=<%=element.name%>>+</button>
+                          </form>
+              
+                        </div>
+                      <%}else{%>
+                        
+                      <form action="/addToCart/combo" method="post">
+                       <button type="submit" class="addToCart" name="dishName" value="<%=element.name %>"><%= element.status%></button>
+                      </form>
+
+                      <%}%>
+                  </div>
+              </div>
+          </div>
+          <% } %>
+           <% }); %>
+           
+   </div>
+   <div class="endmsg">
+         <h1>DITCH THE LONG QUEUES, ORDER FROM YOUR COMFORT.
+         </h1>
+     </div>
+
+
+
+
+<script>
+  function added(element){
+    // alert("adddddd");
+    status = "added";
+  }
+
+</script>
+
+
+<%- include('partials/footer') %>

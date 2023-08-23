@@ -1,0 +1,70 @@
+<%-include("partials/header")%>
+
+
+<h2 class="cart-heading">Your Cart: </h2>
+
+<% let cost = 0 %>
+<% let total = 0 %>
+
+<div class="cartBox">
+
+  <div class="cart-item-list">
+    <% if(list === "EMPTY"){%>
+      <h4 class="emptymsg">"Your cart is empty. Add items from the menu to buy."</h4>
+      <%}else{ %>
+    <%  list.forEach(function(element){ %>
+        <div class="cart-item">
+          <% const imgsrc = "images/" + element.name + ".jpg"; %>
+          <img src=<%=imgsrc%> alt=imgsrc>
+          <h4><%=element.dishName%></h4>
+          <div class="quantity-box">
+            <form action="/edit-quantity/cart" method="post">
+              <button type="submit" name="delete" value=<%=element.name%>>-</button>
+            </form>
+
+            <p><%=element.quantity %></p>
+            <form action="/edit-quantity/cart" method="post">
+              <button type="submit" name="add" value=<%=element.name%>>+</button>
+            </form>
+
+          </div>
+
+          <%cost = element.price * element.quantity %>
+          <% total += cost %>
+
+          <h5>₹ <%= cost %></h5>
+        </div>
+    <%  });%>
+  <%  } %>
+
+  </div>
+
+  <div class="payBox">
+    <h3>Order Summary: </h3>
+    <div class="summary">
+      <% if(list === "EMPTY"){%>
+        <p class="emptyodr">Cart Empty</p>
+        <%}else{ %>
+        <% list.forEach(function(element){ %>
+            <p><%=element.dishName%> x <%=element.quantity%> : ₹ <%=element.price * element.quantity%></p>
+        <% }); %>
+        <%}%>
+
+    </div>
+    <div class="orderTotal">
+      <h3>Order Total:</h3>
+      <h3>₹ <%= total %></h3>
+    </div>
+    <div class="placeOrder">
+      <a href="/"> &lt Back to Menu</a>
+      <button class="btn" type="button" name="button">Place Order</button>
+    </div>
+
+  </div>
+
+
+</div>
+
+
+
+<%-include("partials/footer")%>
